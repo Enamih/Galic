@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Teko:700&display=swap" rel="stylesheet">
+    <title>Galić Law Office - Početna</title>
+    <style>
+        
+
+
+    </style>
+</head>
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a class="active" href="index.html">Početna</a>
+        <a href="about.html">O nama</a>
+        <a href="services.html">Naše usluge</a>
+        <a href="articles.html">Članci</a>
+        <a href="contact.html">Kontakt</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="textAll">
+        <div class="text">
+            <h1 class="text1">Znanje.</h1>
+            <h1 class="text1">Iskustvo.</h1>
+            <h1 class="text1">Uspeh.</h1>
+        </div>
+
+        <p class="ml3">Advokatska kancelarija Galić pruža sveobuhvatne pravne usluge klijentima iz različitih industrija, sa naročitim naglaskom na područja Republike Srbije, Crne Gore, kao i Bosne i Hercegovine.</p>
+    </div>
+    <!--<div class="slideshow">
+        <div class="slider">
+            <img class="slideOne" src="img/img1.jpg" alt="Background-Home-Page" style="max-width: 100%;">
+        </div>
+        <div class="slider">
+            <img class="slideTwo" src="img/img2.jpg" alt="Background-Home-Page" style="width: 100%;">
+        </div>
+        <div class="slider">
+            <img class="slideThird" src="img/img3.jpg" alt="Background-Home-Page" style="width: 100%;">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+-->
+    <script>
+        var textWrapper = document.querySelector('.ml3');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+        .add({
+            targets: '.ml3 .letter',
+            opacity: [0,1],
+            easing: "easeInOutQuad",
+            duration: 1250,
+            delay: (el, i) => 50 * (i+1)
+        }).add({
+            targets: '.ml3',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 5000
+    });
+    </script>
+
+    <!--Hamburger menu-->
+    <script>
+        
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+
+    } 
+  
+}
+    </script>
+
+    <!-- <script>
+        var slideIndex = 0;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slider"); 
+            if (slideIndex < 1) {slideIndex = slides.length}          
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1} 
+            
+            slides[slideIndex-1].style.display = "block";
+            //setTimeout(showSlides, 3000);
+        }
+    </script> -->
+</body>
+</html>
